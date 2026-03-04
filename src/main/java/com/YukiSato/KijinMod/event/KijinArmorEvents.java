@@ -51,7 +51,9 @@ public class KijinArmorEvents {
                 sa.damageSources().wither(),
                 sa.damageSources().fall(),
                 sa.damageSources().flyIntoWall(),
-                sa.damageSources().lightningBolt()
+                sa.damageSources().lightningBolt(),
+                sa.damageSources().stalagmite(),
+                sa.damageSources().fallingStalactite(sa)
         };
 
 
