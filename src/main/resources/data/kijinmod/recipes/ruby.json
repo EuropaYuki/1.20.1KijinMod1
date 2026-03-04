@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#PM",
+        "C B",
+        "RUS"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:beef"
+        },
+        "P": {
+            "item": "minecraft:porkchop"
+        },
+        "M": {
+            "item": "minecraft:mutton"
+        },
+        "C": {
+            "item": "minecraft:chicken"
+        },
+        "B": {
+            "item": "minecraft:blaze_powder"
+        },
+        "R": {
+            "item": "minecraft:rabbit"
+        },
+        "U": {
+            "item": "minecraft:rotten_flesh"
+        },
+        "S": {
+            "item": "minecraft:salmon"
+        }
+    },
+    "result": {}
+}

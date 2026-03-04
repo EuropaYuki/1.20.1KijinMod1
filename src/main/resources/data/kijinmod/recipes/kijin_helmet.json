@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "iii",
+        "i i"
+    ],
+    "key": {
+        "i": {
+            "item": "kijinmod:kijin_ingod"
+        }
+    },
+    "result": {
+        "item": "kijinmod:kijin_helmet",
+        "count": 1
+    }
+}

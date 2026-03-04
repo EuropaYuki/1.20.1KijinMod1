@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "iin"
+    ],
+    "key": {
+        "i": {
+            "item": "kijinmod:kijin_ingod"
+        },
+        "n": {
+            "item": "minecraft:netherite_ingot"
+        }
+    },
+    "result": {
+        "item": "kijinmod:dominic_light_killing_gun",
+        "count": 1
+    }
+}

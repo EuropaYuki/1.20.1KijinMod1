@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ii",
+        "/i",
+        "/ "
+    ],
+    "key": {
+        "i": {
+            "item": "kijinmod:kijin_ingod"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "kijinmod:kijin_axe",
+        "count": 1
+    }
+}

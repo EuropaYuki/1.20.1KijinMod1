@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "iii",
+        "CCC",
+        "iii"
+    ],
+    "key": {
+        "i": {
+            "item": "kijinmod:kijin_ingod"
+        },
+        "C": {
+            "item": "minecraft:cooked_beef"
+        }
+    },
+    "result": {
+        "item": "kijinmod:kijin_burger",
+        "count": 16
+    }
+}

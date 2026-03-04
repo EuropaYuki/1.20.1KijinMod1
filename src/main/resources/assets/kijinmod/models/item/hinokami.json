@@ -1,0 +1,65 @@
+{
+	"textures": {
+		"0": "block/iron_block",
+		"1": "block/redstone_block",
+		"3": "block/amethyst_block",
+		"particle": "kijinmod:item/hinokami"
+	},
+	"elements": [
+		{
+			"from": [6, 0, 2],
+			"to": [8, 5, 4],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 5], "texture": "#1"},
+				"east": {"uv": [0, 0, 2, 5], "texture": "#1"},
+				"south": {"uv": [0, 0, 2, 5], "texture": "#1"},
+				"west": {"uv": [0, 0, 2, 5], "texture": "#1"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#1"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#1"}
+			}
+		},
+		{
+			"from": [6, 7, 2],
+			"to": [8, 32, 4],
+			"faces": {
+				"north": {"uv": [0, 0, 5, 10], "texture": "#0"},
+				"east": {"uv": [2, 0, 10, 12], "texture": "#0"},
+				"south": {"uv": [0, 0, 8, 12], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 10], "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 5, -1],
+			"to": [12, 7, 7],
+			"faces": {
+				"north": {"uv": [0, 0, 10, 2], "texture": "#3"},
+				"east": {"uv": [0, 0, 8, 2], "texture": "#3"},
+				"south": {"uv": [0, 0, 10, 2], "texture": "#3"},
+				"west": {"uv": [0, 0, 8, 2], "texture": "#3"},
+				"up": {"uv": [0, 0, 10, 8], "texture": "#3"},
+				"down": {"uv": [0, 0, 10, 8], "texture": "#3"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0.5, 5.25, 7]
+		},
+		"thirdperson_lefthand": {
+			"translation": [-0.75, 5.5, 6.75]
+		},
+		"firstperson_righthand": {
+			"rotation": [-17, 7, 0],
+			"translation": [3, 5.5, 3]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-17, 7, 0],
+			"translation": [3, 5.5, 3]
+		},
+		"ground": {
+			"translation": [0, 0, 5.75]
+		}
+	}
+}

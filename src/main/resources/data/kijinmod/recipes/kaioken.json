@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  i",
+        " i ",
+        "i  "
+    ],
+    "key": {
+        "i": {
+            "item": "kijinmod:kijin_ingod"
+        }
+    },
+    "result": {
+        "item": "kijinmod:kaioken",
+        "count": 1
+    }
+}

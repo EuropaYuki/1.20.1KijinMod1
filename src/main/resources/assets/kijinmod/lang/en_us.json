@@ -1,0 +1,27 @@
+{
+  "itemGroup.kijin_main" : "KijinMOD",
+  "itemGroup.kijin_sub" : "KijinSub",
+
+  "item.kijinmod.kijin_ingod" : "KijinIngod",
+  "block.kijinmod.kijin_block" : "KijinBlock",
+  "item.kijinmod.kijin_sword" : "KijinSword",
+  "item.kijinmod.kijin_burger" : "KijinBurger",
+  "item.kijinmod.kijin_pickaxe" : "KijinPickaxe",
+  "item.kijinmod.kijin_gun" : "KijinGun",
+  "item.kijinmod.gun" : "Gun",
+  "item.kijinmod.kijin_helmet" : "KijinHelmet",
+  "item.kijinmod.kijin_chestplate" : "Kijin_chestplate",
+  "item.kijinmod.kijin_legins" : "kijin_legins",
+  "item.kijinmod.kijin_boots" : "KijinBoots",
+  "item.kijinmod.kijin_bow" : "DemonsBolg",
+  "item.kijinmod.kijin_shield" : "KijinShield",
+  "item.kijinmod.maui_bow" : "MauiBow",
+  "item.kijinmod.kijin_axe" : "KijinAxe",
+  "item.kijinmod.kijin_shovel" : "KijinShovel",
+  "item.kijinmod.kijin_ammo" : "KijinAmmo",
+  "item.kijinmod.kijin_hoe" : "KijinHoe",
+  "key.kijinmod.boost" : "Boost",
+  "item.kijinmod.kaioken" : "Kaioken",
+  "item.kijinmod.ruby.desc" : "The great ruby is red. It is a symbol of happiness. However, when he learns of the existence of evil and monsters, that color fades... It has the power to fend off evil.",
+  "key.category.kjinmod" : "KijinMOD"
+}

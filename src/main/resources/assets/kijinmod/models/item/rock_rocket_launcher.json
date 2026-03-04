@@ -1,0 +1,118 @@
+{
+  "textures": {
+    "4": "block/iron_block",
+    "5": "block/nether_portal",
+    "6": "block/redstone_block",
+    "7": "block/netherite_block",
+    "8": "block/blackstone_top",
+    "9": "block/black_concrete",
+    "particle": "block/iron_block"
+  },
+  "elements": [
+    {
+      "from": [7, -1, 13],
+      "to": [9, 5, 15],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#5"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#5"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#5"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#5"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#5"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#5"}
+      }
+    },
+    {
+      "from": [7, 5, -10],
+      "to": [9, 7, 21],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#9"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#9"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#9"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#9"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#9"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#9"}
+      }
+    },
+    {
+      "from": [7, 3, 1],
+      "to": [9, 5, 13],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#6"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#6"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#6"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#6"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#6"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#6"}
+      }
+    },
+    {
+      "from": [7, 1, -1],
+      "to": [9, 5, 1],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#5"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#5"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#5"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#5"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#5"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#5"}
+      }
+    },
+    {
+      "from": [7, 4, -12],
+      "to": [10, 8, -10],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#4"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#4"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#4"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#4"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#4"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#4"}
+      }
+    },
+    {
+      "from": [7, 7, -3],
+      "to": [9, 9, 15],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#7"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#7"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#7"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#7"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#7"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#7"}
+      }
+    },
+    {
+      "from": [6, 4, 21],
+      "to": [10, 8, 25],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#8"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#8"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#8"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#8"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#8"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#8"}
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [-0.5, 4.75, 8]
+    },
+    "thirdperson_lefthand": {
+      "translation": [-0.5, 5.25, 6.25],
+      "scale": [2, 1, 1]
+    },
+    "firstperson_righthand": {
+      "translation": [-4, 6.75, -0.25]
+    },
+    "firstperson_lefthand": {
+      "translation": [-2, 5.75, 0]
+    },
+    "gui": {
+      "translation": [0.75, 6, -12.5]
+    },
+    "fixed": {
+      "translation": [-4.75, 3, -9.25]
+    }
+  }
+}

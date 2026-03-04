@@ -1,0 +1,13 @@
+{
+  "itemGroup.kijin_main" : "鬼神MOD",
+  "itemGroup.kijin_sub" : "鬼神サブ",
+
+  "item.kijinmod.kijin_ingod" : "緋桜色金の魂",
+  "block.kijinmod.kijin_block" : "緋桜色金の魂塊",
+  "item.kijinmod.kijin_sword" : "妖刀紅桜",
+  "item.kijinmod.kijin_burger" : "鬼神印のデリシャスバーガー",
+  "item.kijinmod.kijin_pickaxe" : "鬼神ノつるはしVMAX",
+  "item.kijinmod.kijin_gun" : "鬼ヶ島二式",
+  "key.kijinmod.boost" : "ブースト",
+  "key.category.kjinmod" : "鬼神MOD"
+}
