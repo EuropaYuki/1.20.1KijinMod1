@@ -17,11 +17,13 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -88,7 +90,9 @@ public class KijinAmmoEntity extends AbstractArrow {
                 for (int az = 0; az < 5; az++) {
                     for (int y = 0; y < 1; y++) {
                         BlockPos aPos = new BlockPos(pos.getX() + a[ax], pos.getY() - y, pos.getZ() + a[az]);
-                        entity.hurt(entity.damageSources().fall(), 530000F);
+                        if (entity instanceof Mob) {
+                            entity.hurt(entity.damageSources().fall(), ((Mob)entity).getMaxHealth() / 2);
+                        }
                         serverLevel.sendParticles(
                                 ParticleTypes.SWEEP_ATTACK,
                                 pos.getX() + a[ax], pos.getY() - y, pos.getZ() + a[az],
@@ -103,6 +107,17 @@ public class KijinAmmoEntity extends AbstractArrow {
                                 0.5, 0.5, 0.5,
                                 0.07
                         );
+                        if (entity instanceof  LivingEntity) {
+                            level().playSound(
+                                    null,
+                                    entity.getX(), entity.getY(), entity.getZ(),
+                                    SoundEvents.PLAYER_ATTACK_SWEEP,
+                                    SoundSource.PLAYERS,
+                                    1.0f,
+                                    0.9f + ((LivingEntity)entity).getRandom().nextFloat() * 0.2f
+                            );
+                        }
+
                     }
                 }
             }
