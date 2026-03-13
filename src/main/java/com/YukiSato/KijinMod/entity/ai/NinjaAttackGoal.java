@@ -4,6 +4,7 @@ import com.YukiSato.KijinMod.entity.KijinAmmoEntity;
 import com.YukiSato.KijinMod.entity.MauiBowEntity;
 import com.YukiSato.KijinMod.entity.MobEntities;
 import com.YukiSato.KijinMod.entity.custom.NinjaEntity;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
@@ -22,6 +23,7 @@ import net.minecraft.world.phys.Vec3;
 
 public class NinjaAttackGoal extends MeleeAttackGoal {
 
+    private int fireballCooldown = 0;
     private final NinjaEntity entity;
     private int attackDelay = 0;
     private int nextAttack = 0;
@@ -135,22 +137,35 @@ public class NinjaAttackGoal extends MeleeAttackGoal {
 
                     }
 
-                    if (this.attackStep > 0.000000000000000000000000000001) {
-                        double d4 = Math.sqrt(Math.sqrt(d0));
-                        if (!this.mob.isSilent()) {
-                            this.mob.level().levelEvent((Player) null, 1018, this.mob.blockPosition(), 0);
+                    if (fireballCooldown <= 0) {
+
+                        LivingEntity target = this.entity.getTarget();
+
+                        if (target != null) {
+                            this.entity.getLookControl().setLookAt(target, 30.0F, 30.0F);
+                            this.entity.lookAt(EntityAnchorArgument.Anchor.EYES, target.getEyePosition());
                         }
+                        Vec3 vec3 = entity.getLookAngle();
 
-                        Vec3 vec3 = mob.getViewVector(1.0F);
-                        double d5 = vec3.x;
-                        double d6 = vec3.y;
-                        double d7 = vec3.z;
-                        //double d4 = Math.sqrt(Math.sqrt(d0)) * 0.5D;
+                        if (!this.entity.isSilent()) {
+                            this.entity.level().levelEvent((Player)null, 1018, this.entity.blockPosition(), 0);
+                        }
+                        ItemStack stack = new ItemStack(Items.AIR);
+                        KijinAmmoEntity ammo = new KijinAmmoEntity(entity.level(), entity, stack);
+                        ammo.setPos(
+                                this.entity.getX() + vec3.x * 1.0D,
+                                this.entity.getEyeY() - 0.1D,
+                                this.entity.getZ() + vec3.z * 1.0D
+                        );
 
-                        ItemStack ammo = new ItemStack(Items.AIR);
+                        // shoot(x, y, z, speed, inaccuracy) 形式を想定
+                        ammo.shoot(vec3.x, vec3.y, vec3.z, 1.5F, 0.0F);
 
 
+                        this.entity.level().addFreshEntity(ammo);
 
+                        // ★3秒クールタイム設定
+                        fireballCooldown = 60; // 20tick × 3秒
                     }
                 }
 

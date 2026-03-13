@@ -46,7 +46,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class KijinAmmoEntity extends AbstractArrow {
-    private double baseDamage = 0.0D;
+    private double baseDamage = 0.3D;
     private int knockback;
     private SoundEvent soundEvent = SoundEvents.IRON_GOLEM_STEP;
     private ItemStack shootStack = new ItemStack(Items.AIR);
@@ -90,9 +90,7 @@ public class KijinAmmoEntity extends AbstractArrow {
                 for (int az = 0; az < 5; az++) {
                     for (int y = 0; y < 1; y++) {
                         BlockPos aPos = new BlockPos(pos.getX() + a[ax], pos.getY() - y, pos.getZ() + a[az]);
-                        if (entity instanceof Mob) {
-                            entity.hurt(entity.damageSources().fall(), ((Mob)entity).getMaxHealth() / 2);
-                        }
+                        entity.hurt(entity.damageSources().freeze(), 50F);
                         serverLevel.sendParticles(
                                 ParticleTypes.SWEEP_ATTACK,
                                 pos.getX() + a[ax], pos.getY() - y, pos.getZ() + a[az],
@@ -217,7 +215,7 @@ public class KijinAmmoEntity extends AbstractArrow {
                 for (int az = 0; az < 5; az++) {
                     for (int y = 0; y < 1; y++) {
                         BlockPos aPos = new BlockPos(pos.getX() + a[ax], pos.getY() - y, pos.getZ() + a[az]);
-                        level().destroyBlock(aPos, false);
+                        level().destroyBlock(aPos, true);
                         serverLevel.sendParticles(
                                 ParticleTypes.SWEEP_ATTACK,
                                 pos.getX() + a[ax], pos.getY() - y, pos.getZ() + a[az],

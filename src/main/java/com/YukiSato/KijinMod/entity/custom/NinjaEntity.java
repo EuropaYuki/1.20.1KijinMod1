@@ -66,9 +66,8 @@ public class NinjaEntity extends TamableAnimal {
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.1D));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 3f));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
-        this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Mob.class, 0, false, false, (entity) -> {
-            return entity instanceof Mob && !(entity instanceof NinjaEntity) && !(entity instanceof CameramanEntity);
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 0, false, false, (entity) -> {
+            return entity instanceof Player;
         }));
 //        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (player) ->{
 //            return player instanceof Player;
@@ -161,12 +160,12 @@ public class NinjaEntity extends TamableAnimal {
 
     public static AttributeSupplier.Builder create() {
         return Animal.createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 45D)
+                .add(Attributes.MAX_HEALTH, 60D)
                 .add(Attributes.FOLLOW_RANGE, 20D)
                 .add(Attributes.ARMOR_TOUGHNESS, 0.5f)
                 .add(Attributes.MOVEMENT_SPEED, 0.6D)
                 .add(Attributes.ATTACK_KNOCKBACK, 0.5f)
-                .add(Attributes.ATTACK_DAMAGE, 0f);
+                .add(Attributes.ATTACK_DAMAGE, 0.0f);
     }
 
     @Nullable
