@@ -18,7 +18,7 @@ public class KijinKeyBind {
     public static KeyMapping[] kijinKey;
 
     public static void register(FMLClientSetupEvent event) {
-        kijinKey = new KeyMapping[11];
+        kijinKey = new KeyMapping[13];
 
         kijinKey[0] = create("boost", KeyEvent.VK_Z);
         kijinKey[1] = create("super_boost", KeyEvent.VK_X);
@@ -31,6 +31,8 @@ public class KijinKeyBind {
         kijinKey[8] = create("saru", KeyEvent.VK_X);
         kijinKey[9] = create("kindan_on", KeyEvent.VK_O);
         kijinKey[10] = create("kindan_off", KeyEvent.VK_K);
+        kijinKey[11] = create("wewewe", KeyEvent.VK_Y);
+        kijinKey[12] = create("wwwww", KeyEvent.VK_B);
         for (int a = 0; a < kijinKey.length; a++) {
 
         }
