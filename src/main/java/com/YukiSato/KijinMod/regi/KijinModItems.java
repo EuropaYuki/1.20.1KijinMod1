@@ -75,4 +75,5 @@ public class KijinModItems {
     public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item", TestItem::new);
     public static final RegistryObject<Item> MAGIC_STICK = ITEMS.register("magic_stick", FrierenMagicWand::new);
     public static final RegistryObject<Item> MAGIC_WAND = ITEMS.register("magic_wand", MagicWand::new);
+    public static final RegistryObject<Item> REVOLTE_SWORD = ITEMS.register("revolte_sword", RevolteSword::new);
 }
