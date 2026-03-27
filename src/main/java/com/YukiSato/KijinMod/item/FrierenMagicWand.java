@@ -2,6 +2,7 @@ package com.YukiSato.KijinMod.item;
 
 import com.YukiSato.KijinMod.entity.NonFireLB;
 import com.YukiSato.KijinMod.keybind.KijinKeyBind;
+import com.YukiSato.KijinMod.regi.KijinModItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -59,8 +60,8 @@ public class FrierenMagicWand extends BowItem {
                 .add(0, player.getEyeHeight() * 0.6, 0)
                 .add(look.scale(2.0));
         if (!level.isClientSide) {
-            int steps = 45;
-            float radius = 5F;
+            int steps = 50;
+            float radius = 3F;
 
             for (int i = 0; i < steps; i++) {
                 Vec3 pos = start.add(look.scale(i));
