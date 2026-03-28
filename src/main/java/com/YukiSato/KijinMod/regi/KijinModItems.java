@@ -2,11 +2,8 @@ package com.YukiSato.KijinMod.regi;
 
 import com.YukiSato.KijinMod.entity.MobEntities;
 import com.YukiSato.KijinMod.item.*;
+import com.YukiSato.KijinMod.item.armor.*;
 import com.YukiSato.KijinMod.item.tool.DogiragonBaster;
-import com.YukiSato.KijinMod.item.armor.ItemKijinBoots;
-import com.YukiSato.KijinMod.item.armor.ItemKijinChestplate;
-import com.YukiSato.KijinMod.item.armor.ItemKijinHelmet;
-import com.YukiSato.KijinMod.item.armor.ItemKijinLegins;
 import com.YukiSato.KijinMod.item.food.FoodKijinBurger;
 import com.YukiSato.KijinMod.item.tool.*;
 import com.YukiSato.KijinMod.main.KijinMod;
@@ -76,4 +73,5 @@ public class KijinModItems {
     public static final RegistryObject<Item> MAGIC_STICK = ITEMS.register("magic_stick", FrierenMagicWand::new);
     public static final RegistryObject<Item> MAGIC_WAND = ITEMS.register("magic_wand", MagicWand::new);
     public static final RegistryObject<Item> REVOLTE_SWORD = ITEMS.register("revolte_sword", RevolteSword::new);
+    public static final RegistryObject<Item> DIGARDNACHT = ITEMS.register("digardnacht", Digardnacht::new);
 }

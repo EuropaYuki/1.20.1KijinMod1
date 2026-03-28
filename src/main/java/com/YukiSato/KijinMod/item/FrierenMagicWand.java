@@ -135,19 +135,6 @@ public class FrierenMagicWand extends BowItem {
             }
         }
 
-
-
-
-        player1.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 20, 1, false, false));
-        player1.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20*60*60*1000, 0, false, true));
-
-        if (KijinKeyBind.kijinKey[9].isDown()) {
-            saru = 1;
-            player1.displayClientMessage(Component.literal("Forbidden : " + modeName()), true);
-        } else if (KijinKeyBind.kijinKey[10].isDown()) {
-            saru = 0;
-            player1.displayClientMessage(Component.literal("Forbidden : " + modeName()), true);
-        }
         if (saru == 1) {
             double reach = 20.0; // 見る距離
             Vec3 eyePos = player1.getEyePosition();
@@ -288,18 +275,6 @@ public class FrierenMagicWand extends BowItem {
             }
 
         }
-    }
-    public String modeName() {
-        return switch (saru) {
-            case 0 -> "OFF";
-            case 1 -> "ON";
-            default -> "Unknown";
-        };
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("Forbidden : " + modeName()).withStyle(ChatFormatting.RED));
     }
 
     @Override

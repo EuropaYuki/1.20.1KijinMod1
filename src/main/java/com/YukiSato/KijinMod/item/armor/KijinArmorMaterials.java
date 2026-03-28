@@ -14,8 +14,8 @@ import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum KijinArmorMaterials implements ArmorMaterial {
-    KIJIN("kijinmod:kijin", Integer.MAX_VALUE,new int[]{Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE}, 100, SoundEvents.ARMOR_EQUIP_NETHERITE,Float.MAX_VALUE , Float.MAX_VALUE, ()-> {return Ingredient.of(KijinModItems.KIJIN_INGOD.get());});
-    private static final int[] HEALTH_FUNCTION_FOR_TYPE  = new int[] {1, 1, 1, 1};
+    KIJIN("kijinmod:kijin", Integer.MAX_VALUE,new int[]{Integer.MAX_VALUE, 8, Integer.MAX_VALUE, Integer.MAX_VALUE}, 100, SoundEvents.ARMOR_EQUIP_NETHERITE,Float.MAX_VALUE , Float.MAX_VALUE, ()-> {return Ingredient.of(KijinModItems.KIJIN_INGOD.get());});
+    private static final int[] HEALTH_FUNCTION_FOR_TYPE  = new int[] {2, 1, 2, 2};
     private final int durabilityMultiplier, enchantmentValue;
     private final int[] protectionFunctionForType;
     private final SoundEvent sound;

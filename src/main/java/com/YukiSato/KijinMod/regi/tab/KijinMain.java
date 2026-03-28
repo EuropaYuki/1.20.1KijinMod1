@@ -56,6 +56,7 @@ public class KijinMain {
             KijinModItems.MAGIC_STICK.get(),
             KijinModItems.MAGIC_WAND.get(),
             KijinModItems.REVOLTE_SWORD.get(),
+            KijinModItems.DIGARDNACHT.get(),
             Items.CHERRY_PLANKS,
             Items.STONE
     };

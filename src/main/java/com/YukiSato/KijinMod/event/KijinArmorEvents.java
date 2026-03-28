@@ -3,6 +3,7 @@ package com.YukiSato.KijinMod.event;
 
 import com.YukiSato.KijinMod.entity.MobEntities;
 import com.YukiSato.KijinMod.entity.custom.NinjaEntity;
+import com.YukiSato.KijinMod.item.armor.Digardnacht;
 import com.YukiSato.KijinMod.item.armor.ItemKijinChestplate;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -46,12 +47,8 @@ public class KijinArmorEvents {
         }
         LivingEntity sa = event.getEntity();
         final DamageSource[] damageSources = {
-                sa.damageSources().mobAttack(saru),
-                sa.damageSources().magic(),
-                sa.damageSources().wither(),
                 sa.damageSources().fall(),
                 sa.damageSources().flyIntoWall(),
-                sa.damageSources().lightningBolt(),
                 sa.damageSources().stalagmite(),
                 sa.damageSources().fallingStalactite(sa)
         };
@@ -60,8 +57,10 @@ public class KijinArmorEvents {
 
 
         for (DamageSource source : damageSources) {
-            if (ItemKijinChestplate.set == 1 && event.getSource() == source) {
-                event.setAmount(0);
+            if (ItemKijinChestplate.set == 1 || Digardnacht.set == 1) {
+                if (event.getSource() == source) {
+                    event.setAmount(0.0F);
+                }
             }
         }
         if (ItemKijinChestplate.set == 1) {

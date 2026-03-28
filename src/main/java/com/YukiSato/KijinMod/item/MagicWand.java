@@ -84,13 +84,6 @@ public class MagicWand extends BowItem {
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int p_41407_, boolean p_41408_) {
         Player player1 = (Player) entity;
-        if (KijinKeyBind.kijinKey[7].consumeClick()) {
-            we = 1;
-            player1.displayClientMessage(Component.literal("Jodragirum : " + MagicName()), true);
-        } else if (KijinKeyBind.kijinKey[5].consumeClick()) {
-            we = 0;
-            player1.displayClientMessage(Component.literal("Jodragirum : " + MagicName()), true);
-        }
         if (player1.isShiftKeyDown() && player1.getItemBySlot(EquipmentSlot.MAINHAND).getItem() == KijinModItems.MAGIC_WAND.get()) {
 
         }
@@ -121,18 +114,6 @@ public class MagicWand extends BowItem {
                 target.setNoAi(true);
             }
         }
-    }
-    public String MagicName() {
-        return switch (we) {
-            case 0 -> "OFF";
-            case 1 -> "ON";
-            default -> "Unknown";
-        };
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("Jodragirum : " + MagicName()).withStyle(ChatFormatting.DARK_PURPLE));
     }
 
     @Override
