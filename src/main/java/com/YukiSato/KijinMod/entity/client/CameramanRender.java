@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class CameramanRender extends MobRenderer<CameramanEntity, CameraManModel<CameramanEntity>> {
     public CameramanRender(EntityRendererProvider.Context p_174304_) {
-        super(p_174304_, new CameraManModel<>(p_174304_.bakeLayer(MobModelLayers.CAMERAMAN_LAYER)), 2f);
+        super(p_174304_, new CameraManModel<>(p_174304_.bakeLayer(MobModelLayers.CAMERAMAN_LAYER)), 0.5f);
     }
 
     @Override

@@ -40,18 +40,12 @@ public class Digardnacht extends ArmorItem {
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
         Player player = (Player) entity;
-        double a1[] = {-0.9, -0.6, -0.3, 0, 0.3, 0.6, 0.9};
-        double b[] = {0.1, 0.2, 0.3};
-        Vec3 vec31 = player.getViewVector(1.0F);
-        level.addParticle(ParticleTypes.SMOKE,
-                player.getX() + a1[level.random.nextInt(6)],
-                player.getY() + 1,
-                player.getZ(a1[level.random.nextInt(6)]),
-                vec31.x * -0.15,
-                b[level.random.nextInt(3)],
-                vec31.z * -0.15);
+        for (int i = 0; i < 2; ++i) {
+            level.addParticle(ParticleTypes.PORTAL, player.getRandomX(0.5D), player.getRandomY() - 0.25D, player.getRandomZ(0.5D), (level.random.nextDouble() - 0.5D) * 2.0D, -level.random.nextDouble(), (level.random.nextDouble() - 0.5D) * 2.0D);
+        }
+
         if (KijinKeyBind.kijinKey[7].isDown()) {
-            double reach = 2; // 見る距離
+            double reach = 3; // 見る距離
             Vec3 eyePos = player.getEyePosition();
             Vec3 look = player.getLookAngle();
             Vec3 endPos = eyePos.add(look.scale(reach));
@@ -93,9 +87,10 @@ public class Digardnacht extends ArmorItem {
             }
             if (KijinKeyBind.kijinKey[1].isDown()) {
                 // ■ 範囲（5x5）
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1, 11));
                 AABB area = new AABB(
-                        player.getX() - 3, player.getEyeY() - 1, player.getZ() - 3,
-                        player.getX() + 3, player.getEyeY() + 1, player.getZ() + 3
+                        player.getX() - 1, player.getEyeY() - 1, player.getZ() - 1,
+                        player.getX() + 1, player.getEyeY() + 1, player.getZ() + 1
                 );
 
                 // ■ 敵取得
@@ -109,10 +104,11 @@ public class Digardnacht extends ArmorItem {
                 for (LivingEntity target : targets) {
 
                     // ダメージ
-                    target.hurt(player.damageSources().playerAttack(player), 8.0F);
+                    target.invulnerableTime = 0;
+                    target.hurt(player.damageSources().playerAttack(player), 7.0F);
 
                     // ノックバック（斬撃っぽさ）
-                    Vec3 knockback = target.position().subtract(player.position()).normalize().scale(0.8);
+                    Vec3 knockback = target.position().subtract(player.position()).normalize().scale(0.1);
                     target.setDeltaMovement(target.getDeltaMovement().add(knockback));
                 }
 
@@ -136,9 +132,19 @@ public class Digardnacht extends ArmorItem {
                                     0.2, 0.2, 0.2,
                                     0.01
                             );
+                            serverLevel.sendParticles(
+                                    ParticleTypes.SWEEP_ATTACK,
+                                    aPos.getX(),
+                                    aPos.getY(),
+                                    aPos.getZ(),
+                                    10,
+                                    0, 0, 0,
+                                    0
+                            );
                         }
                     }
                 }
+                player.setDeltaMovement(vec3.x * 1.1, vec3.y * 1.1, vec3.z * 1.1);
             }
         } else {
             if (player.getAbilities().mayfly && !player.isCreative()) {

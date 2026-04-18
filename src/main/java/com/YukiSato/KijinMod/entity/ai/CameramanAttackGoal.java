@@ -133,11 +133,7 @@ public class CameramanAttackGoal extends MeleeAttackGoal {
 
                         }
 
-                        if (this.attackStep > 0.0000000000001) {
-                            double d4 = Math.sqrt(Math.sqrt(d0));
-                            if (!this.mob.isSilent()) {
-                                this.mob.level().levelEvent((Player) null, 1018, this.mob.blockPosition(), 0);
-                            }
+                        if (this.attackStep > 1) {
 
                             Vec3 vec3 = mob.getViewVector(1.0F);
                             double d5 = vec3.x;

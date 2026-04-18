@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class NinjaRender extends MobRenderer<NinjaEntity, NinjaModel<NinjaEntity>> {
     public NinjaRender(EntityRendererProvider.Context p_174304_) {
-        super(p_174304_, new NinjaModel<>(p_174304_.bakeLayer(MobModelLayers.NINJA_LAYER)), 2f);
+        super(p_174304_, new NinjaModel<>(p_174304_.bakeLayer(MobModelLayers.NINJA_LAYER)), 0.5f);
     }
 
     @Override

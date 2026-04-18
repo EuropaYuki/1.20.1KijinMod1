@@ -1,7 +1,11 @@
 package com.YukiSato.KijinMod.item;
 
+import com.YukiSato.KijinMod.event.TimeStopManager;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
@@ -18,30 +22,18 @@ public class TimeStopItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
-        if (!world.isClientSide) {
-            // プレイヤーの周囲10ブロックの範囲を定義
-            List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(
-                    world.getWorldBorder().getMinX(), world.getMinBuildHeight(), world.getWorldBorder().getMinZ(),
-                    world.getWorldBorder().getMaxX(), world.getMaxBuildHeight(), world.getWorldBorder().getMaxZ()));
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
 
-            for (LivingEntity entity : entities) {
-                if (entity instanceof Mob) {
-                    ((Mob) entity).setNoAi(true);
-                    ((Mob) entity).getNavigation().stop();
-                }
-            }
-            for (LivingEntity entity : entities) {
-                Mob mob = (Mob) entity;
-                if (entity instanceof Mob) {
-                    // モブのナビゲーションを停止し、動けなくする
-                    mob.getNavigation().stop();
-                    mob.setNoAi(true);  // AIを停止
-                }
-            }
-            player.getItemInHand(hand).hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(hand));  // アイテムの耐久値を消耗
-            return InteractionResultHolder.success(player.getItemInHand(hand));
+        if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
+            // 5秒停止
+            TimeStopManager.start(serverLevel, player, 300);
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 13));
+            player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 300, 200, false, false));
+            // 10秒クールタイム
+            player.getCooldowns().addCooldown(this, 400);
         }
-        return InteractionResultHolder.pass(player.getItemInHand(hand));
+
+        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }
 }
