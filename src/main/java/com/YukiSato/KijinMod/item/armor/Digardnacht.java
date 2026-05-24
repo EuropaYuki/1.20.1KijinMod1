@@ -44,38 +44,38 @@ public class Digardnacht extends ArmorItem {
             level.addParticle(ParticleTypes.PORTAL, player.getRandomX(0.5D), player.getRandomY() - 0.25D, player.getRandomZ(0.5D), (level.random.nextDouble() - 0.5D) * 2.0D, -level.random.nextDouble(), (level.random.nextDouble() - 0.5D) * 2.0D);
         }
 
-        if (KijinKeyBind.kijinKey[7].isDown()) {
-            double reach = 3; // 見る距離
-            Vec3 eyePos = player.getEyePosition();
-            Vec3 look = player.getLookAngle();
-            Vec3 endPos = eyePos.add(look.scale(reach));
-
-            AABB box1 = player.getBoundingBox()
-                    .expandTowards(look.scale(reach))
-                    .inflate(3.0);
-            EntityHitResult result = ProjectileUtil.getEntityHitResult(
-                    player.level(),
-                    player,
-                    eyePos,
-                    endPos,
-                    box1,
-                    entity1 -> entity1 instanceof LivingEntity
-            );
-            if (result != null && level instanceof ServerLevel serverLevel) {
-                Entity entity1 = result.getEntity();
-                Vec3 knockback = entity1.position().subtract(player.position()).normalize().scale(0.2);
-                entity1.setDeltaMovement(entity1.getDeltaMovement().add(knockback));
-                serverLevel.sendParticles(
-                        ParticleTypes.SMOKE,
-                        entity1.getX(),
-                        entity1.getY(),
-                        entity1.getZ(),
-                        10,
-                        0.2, 0.2, 0.2,
-                        0.01
-                );
-            }
-        }
+//        if (KijinKeyBind.kijinKey[7].isDown()) {
+//            double reach = 3; // 見る距離
+//            Vec3 eyePos = player.getEyePosition();
+//            Vec3 look = player.getLookAngle();
+//            Vec3 endPos = eyePos.add(look.scale(reach));
+//
+//            AABB box1 = player.getBoundingBox()
+//                    .expandTowards(look.scale(reach))
+//                    .inflate(3.0);
+//            EntityHitResult result = ProjectileUtil.getEntityHitResult(
+//                    player.level(),
+//                    player,
+//                    eyePos,
+//                    endPos,
+//                    box1,
+//                    entity1 -> entity1 instanceof LivingEntity
+//            );
+//            if (result != null && level instanceof ServerLevel serverLevel) {
+//                Entity entity1 = result.getEntity();
+//                Vec3 knockback = entity1.position().subtract(player.position()).normalize().scale(0.2);
+//                entity1.setDeltaMovement(entity1.getDeltaMovement().add(knockback));
+//                serverLevel.sendParticles(
+//                        ParticleTypes.SMOKE,
+//                        entity1.getX(),
+//                        entity1.getY(),
+//                        entity1.getZ(),
+//                        10,
+//                        0.2, 0.2, 0.2,
+//                        0.01
+//                );
+//            }
+//        }
         if (isWearingFullKijinArmor(player)) {
             set = 1;
             applyPotionEffects(player);
