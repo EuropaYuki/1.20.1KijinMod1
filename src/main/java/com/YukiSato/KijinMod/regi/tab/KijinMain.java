@@ -58,6 +58,7 @@ public class KijinMain {
             KijinModItems.REVOLTE_SWORD.get(),
             KijinModItems.DIGARDNACHT.get(),
             KijinModItems.RED_LIGHT_SABER.get(),
+            KijinModItems.KATANA.get(),
             Items.CHERRY_PLANKS,
             Items.STONE
     };

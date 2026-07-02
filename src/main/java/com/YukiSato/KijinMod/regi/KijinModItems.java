@@ -75,4 +75,5 @@ public class KijinModItems {
     public static final RegistryObject<Item> REVOLTE_SWORD = ITEMS.register("revolte_sword", RevolteSword::new);
     public static final RegistryObject<Item> DIGARDNACHT = ITEMS.register("digardnacht", Digardnacht::new);
     public static final RegistryObject<Item> RED_LIGHT_SABER = ITEMS.register("red_light_saber", RedLightSaber::new);
+    public static final RegistryObject<Item> KATANA = ITEMS.register("katana", Katana::new);
 }
