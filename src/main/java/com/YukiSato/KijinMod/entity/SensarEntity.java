@@ -65,6 +65,10 @@ public class SensarEntity extends AbstractArrow {
     @Override
     protected void onHitEntity(EntityHitResult result) {
         super.onHitEntity(result);
+        if (this.getOwner() instanceof Player) {
+            Player player = (Player) this.getOwner();
+            player.teleportTo(result.getEntity().getX(), result.getEntity().getY(), result.getEntity().getZ());
+        }
         this.hitEntity = result.getEntity();
         if (this.level() instanceof ServerLevel) {
             this.serverLevel = (ServerLevel) this.level();
